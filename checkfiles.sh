@@ -3,9 +3,6 @@ while read -r FILE; do
   array+=("$FILE")
 done
 
-L=${#array[@]}
-c=0
-
 for FILE in "${array[@]}"; do
   if [ ! -f "$FILE" ]
   then
@@ -25,7 +22,6 @@ for FILE in "${array[@]}"; do
       esac
     done
   fi
-  ((c+=1))
 done
 
 printf "\n\n Done!!\n\n" "$FILE"
